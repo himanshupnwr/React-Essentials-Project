@@ -2,16 +2,13 @@ import PropTypes from 'prop-types';
 
 TabButton.propTypes = {
     children: PropTypes.string,
+    onSelect: PropTypes.func
   };
 
-export default function TabButton({ children }) {
-  function handleClick() {
-    console.log('Hello World!');
+  export default function TabButton({ children, onSelect }) {
+    return (
+      <li>
+        <button onClick={onSelect}>{children}</button>
+      </li>
+    );
   }
-
-  return (
-    <li>
-      <button onClick={handleClick}>{children}</button>
-    </li>
-  );
-}
